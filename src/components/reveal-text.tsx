@@ -6,7 +6,7 @@ const RevealText = ({ className }: { className?: string }) => {
   return (
     <div className={cn(className)}>
       <TextLoop
-        className="overflow-y-clip container"
+        className="overflow-y-clip container hidden md:block"
         interval={5}
         transition={{
           type: "spring",

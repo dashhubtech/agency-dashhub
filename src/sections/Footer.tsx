@@ -70,7 +70,7 @@ const Footer: FC = () => {
               </TextAnimation>
               <Button
                 variant="secondary"
-                className="mt-8"
+                className="mt-8 text-sm"
                 iconAfter={
                   <div className="overflow-hidden size-6">
                     <div className="h-5 w-12 flex group-hover/button:-translate-x-1/2 transition-transform duration-300  ">

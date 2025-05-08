@@ -1,13 +1,18 @@
 import TextAnimation from "@/components/text-animation";
 import AboutImage from "@/assets/about.jpg";
 import HeroImage1 from "@/assets/hero-1.jpg";
+import { cn } from "@/lib/utils";
 
 const About = () => {
   return (
     <section className="bg-white h-full  rounded-4xl shadow-2xl text-black">
       <div className="h-full pt-[100px] px-4 md:px-0 flex flex-col-reverse md:flex-row items-center gap-4 justify-between">
         <div className="flex-1">
-          <img src={HeroImage1.src} alt="About" className={"dark-img"} />
+          <img
+            src={HeroImage1.src}
+            alt="About"
+            className={cn("about-img md:rounded-r-2xl rounded-2xl")}
+          />
         </div>
         <div className="container flex flex-col items-center justify-center flex-1">
           <div className="flex items-center gap-2">
@@ -15,7 +20,7 @@ const About = () => {
             <h2 className="text-2xl font-bold uppercase">About</h2>
           </div>
           <TextAnimation animateOnScroll={true} delay={0.7}>
-            <p className="font-semi-bold text-xl md:text-2xl w-lg">
+            <p className="font-semi-bold text-xl md:text-2xl ">
               <span className="text-5xl font-bold uppercase pr-2">Dashhub</span>
               was venture builders partnering with you to scale your startup for
               future VC success. Beyond capital, we offer strategic guidance and
@@ -33,7 +38,7 @@ const About = () => {
           <img
             src={AboutImage.src}
             alt="About"
-            className={" w-full md:w-[600px] rounded-2xl grayscale-100"}
+            className={"  rounded-2xl grayscale-100 about-img"}
           />
         </div>
         <div className=" flex flex-col  items-center justify-center flex-1 gap-5">
