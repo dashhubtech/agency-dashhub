@@ -1,0 +1,60 @@
+import TextAnimation from "@/components/text-animation";
+import AboutImage from "@/assets/about.jpg";
+import HeroImage1 from "@/assets/hero-1.jpg";
+
+const About = () => {
+  return (
+    <section className="bg-white h-full  rounded-4xl shadow-2xl text-black">
+      <div className="h-full pt-[100px] px-4 md:px-0 flex flex-col-reverse md:flex-row items-center gap-4 justify-between">
+        <div className="flex-1">
+          <img src={HeroImage1.src} alt="About" className={"dark-img"} />
+        </div>
+        <div className="container flex flex-col items-center justify-center flex-1">
+          <div className="flex items-center gap-2">
+            <hr className="w-[30px] h-1 bg-black" />
+            <h2 className="text-2xl font-bold uppercase">About</h2>
+          </div>
+          <TextAnimation animateOnScroll={true} delay={0.7}>
+            <p className="font-semi-bold text-xl md:text-2xl w-lg">
+              <span className="text-5xl font-bold uppercase pr-2">Dashhub</span>
+              was venture builders partnering with you to scale your startup for
+              future VC success. Beyond capital, we offer strategic guidance and
+              actively work alongside you to build strong foundations, optimize
+              operations, and accelerate growth. Our hands-on approach and
+              extensive network are focused on transforming your vision into a
+              thriving, investment-ready business.
+            </p>
+          </TextAnimation>
+        </div>
+      </div>
+
+      <div className="h-full py-[50px] px-4 md:px-0 flex flex-col items-center justify-center gap-6 ">
+        <div>
+          <img
+            src={AboutImage.src}
+            alt="About"
+            className={" w-full md:w-[600px] rounded-2xl grayscale-100"}
+          />
+        </div>
+        <div className=" flex flex-col  items-center justify-center flex-1 gap-5">
+          <div className="flex items-center gap-2">
+            <hr className="w-[30px] h-1 bg-black" />
+            <h2 className="text-3xl uppercase ">What We Do</h2>
+          </div>
+          <TextAnimation delay={0.5}>
+            <p className=" px-4 font-semi-bold text-2xl md:text-5xl text-right ">
+              We are venture builders partnering with you to scale your startup
+              for future VC success. Beyond capital, we offer strategic guidance
+              and actively work alongside you to build strong foundations,
+              optimize operations, and accelerate growth. Our hands-on approach
+              and extensive network are focused on transforming your vision into
+              a thriving, investment-ready business.
+            </p>
+          </TextAnimation>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
