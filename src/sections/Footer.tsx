@@ -6,6 +6,11 @@ import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import { useInView } from "motion/react";
 import Link from "next/link";
 import TextAnimation from "@/components/text-animation";
+import {
+  IconBrandLinkedin,
+  IconBrandInstagram,
+  IconBrandX,
+} from "@tabler/icons-react";
 
 const navItems = [
   {
@@ -27,6 +32,24 @@ const navItems = [
   {
     href: "#contact",
     label: "Contact",
+  },
+];
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    link: "https://instagram.com",
+    icon: IconBrandInstagram,
+  },
+  {
+    name: "LinkedIn",
+    link: "https://linkedin.com",
+    icon: IconBrandLinkedin,
+  },
+  {
+    name: "X",
+    link: "https://x.com",
+    icon: IconBrandX,
   },
 ];
 
@@ -124,9 +147,28 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <p className="py-16 text-white/30 text-sm">
-          Copyright &copy; DashHub &bull; All rights reserved.{" "}
-        </p>
+        <div className="flex flex-col-reverse md:flex-row gap-6 justify-between py-16 text-white/30">
+          <div>
+            <p className=" text-sm">
+              Copyright &copy; DashHub &bull; All rights reserved.{" "}
+            </p>
+          </div>
+
+          <div className="flex gap-6">
+            {socialLinks.map(({ name, link, icon: Icon }) => (
+              <a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/30 transition-all duration-300 hover:text-white"
+              >
+                <Icon className="size-8" />
+                <span className="hidden md:block text-sm">{name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

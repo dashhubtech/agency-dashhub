@@ -21,7 +21,7 @@ const About = () => {
           </div>
           <TextAnimation animateOnScroll={true} delay={0.7}>
             <p className="font-semi-bold text-xl md:text-2xl ">
-              <span className="text-5xl font-bold uppercase pr-2">Dashhub</span>
+              <span className="text-4xl font-bold uppercase pr-2">Dashhub</span>
               was venture builders partnering with you to scale your startup for
               future VC success. Beyond capital, we offer strategic guidance and
               actively work alongside you to build strong foundations, optimize

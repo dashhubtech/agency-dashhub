@@ -5,6 +5,7 @@ import { ContainerTextFlip } from "@/components/container-text-flip";
 import { InfiniteSlider } from "@/components/infinite-slider";
 import RevealText from "@/components/reveal-text";
 import { heroImages } from "@/lib/constants";
+import Link from "next/link";
 import { FC } from "react";
 
 const Hero: FC = () => {
@@ -26,7 +27,9 @@ const Hero: FC = () => {
             </h1>
           </div>
 
-          <Button variant="secondary">Let's Talk</Button>
+          <Link href={"#contact"}>
+            <Button variant="secondary">Let's Talk</Button>
+          </Link>
         </div>
         <div>
           <InfiniteSlider speedOnHover={1} gap={24}>
@@ -35,7 +38,7 @@ const Hero: FC = () => {
                 key={index}
                 src={image.img}
                 alt="hero-image"
-                className="img  opacity-50 hover:opacity-100 transition-all duration-300 ease-in-out rounded-xl hover:scale-105 hover:shadow-2xl"
+                className="img  opacity-80 hover:opacity-100 transition-all duration-300 ease-in-out rounded-xl hover:scale-95 hover:shadow-2xl"
               />
             ))}
           </InfiniteSlider>

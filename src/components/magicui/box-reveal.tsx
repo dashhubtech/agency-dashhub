@@ -60,7 +60,7 @@ export const BoxReveal = ({
           left: 0,
           right: 0,
           zIndex: 20,
-          background: boxColor,
+          // background: boxColor,
         }}
       />
     </div>

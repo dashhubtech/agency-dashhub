@@ -150,7 +150,7 @@ const Header: FC = () => {
               onClick={handleClickMobileNavItem}
             >
               <div className="container max-w-full! flex items-center justify-between">
-                <span className="text-6xl group-hover/nav-item:pl-4 transition-all duration-500">
+                <span className="text-4xl md:text-6xl group-hover/nav-item:pl-4 transition-all duration-500">
                   {label}
                 </span>
                 <svg
