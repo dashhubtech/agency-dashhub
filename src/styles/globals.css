@@ -152,7 +152,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#3c31d6] text-foreground;
+    @apply bg-[#274dfa] text-foreground;
   }
 }
 
@@ -185,4 +185,8 @@ img {
 }
 .about-img {
   @apply w-[400px] md:w-[800px];
+}
+
+.logo {
+  @apply w-[120px];
 }

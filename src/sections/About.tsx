@@ -20,7 +20,7 @@ const About = () => {
             <h2 className="text-2xl font-bold uppercase">About</h2>
           </div>
           <TextAnimation animateOnScroll={true} delay={0.7}>
-            <p className="font-semi-bold text-xl md:text-2xl ">
+            <p className="font-semi-bold text-lg md:text-2xl ">
               <span className="text-4xl font-bold uppercase pr-2">Dashhub</span>
               was venture builders partnering with you to scale your startup for
               future VC success. Beyond capital, we offer strategic guidance and

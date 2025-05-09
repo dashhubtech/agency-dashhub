@@ -4,6 +4,7 @@ import { type FC, type MouseEvent, useEffect, useState } from "react";
 import { motion, useAnimate } from "motion/react";
 import Link from "next/link";
 import Button from "@/components/Button";
+import Logo from "@/assets/logo.png";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -173,15 +174,13 @@ const Header: FC = () => {
           ))}
         </nav>
       </div>
-      <div className="mix-blend-difference fixed top-0 left-0 w-full backdrop-blur-md z-10">
+      <div className=" fixed top-0 left-0 w-full backdrop-blur-md z-10">
         <div className="container max-w-full!">
           <div className="flex justify-between h-20 items-center">
             <div>
-              <a href="/">
-                <span className="text-xl font-bold uppercase text-white">
-                  Dash&nbsp; Hub
-                </span>
-              </a>
+              <Link href="/">
+                <img src={Logo.src} alt="dashhub" className="logo" />
+              </Link>
             </div>
           </div>
         </div>
