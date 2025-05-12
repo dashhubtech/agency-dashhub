@@ -13,14 +13,6 @@ const navItems = [
     href: "#intro",
   },
   {
-    label: "Selected Works",
-    href: "#projects",
-  },
-  {
-    label: "Testimonials",
-    href: "#testimonials",
-  },
-  {
     label: "FAQs",
     href: "#faqs",
   },
