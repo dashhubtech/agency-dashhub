@@ -14,10 +14,13 @@ import {
 
 const navItems = [
   {
-    href: "#intro",
+    href: "#home",
     label: "Home",
   },
-  
+  {
+    href: "#about",
+    label: "About",
+  },
   {
     href: "#faqs",
     label: "FAQs",
