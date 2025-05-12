@@ -22,13 +22,9 @@ const About = () => {
           <TextAnimation animateOnScroll={true} delay={0.7}>
             <p className="font-semi-bold text-lg md:text-2xl ">
               <span className="text-4xl font-bold uppercase pr-2">Dashhub</span>
-              was venture builders partnering with you to scale your startup for
-              future VC success. Beyond capital, we offer strategic guidance and
-              actively work alongside you to build strong foundations, optimize
-              operations, and accelerate growth. Our hands-on approach and
-              extensive network are focused on transforming your vision into a
-              thriving, investment-ready business.
-            </p>
+is an innovative business development company, that empowers founders and entrepreneurs to turn their bold ideas into flourishing, high-growth businesses. 
+Established in 2020, we have dedicated ourselves to crafting a unique Venture Studio model, where we collaborate with visionary individuals to refine business models, identify market opportunities, design sustainable growth strategies, and provide unparalleled support in product development, branding, and scaling.
+              </p>
           </TextAnimation>
         </div>
       </div>
