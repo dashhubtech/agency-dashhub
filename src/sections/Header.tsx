@@ -10,7 +10,7 @@ import Logo from "@/assets/logo.png";
 const navItems = [
   {
     label: "About",
-    href: "#intro",
+    href: "#about",
   },
   {
     label: "FAQs",
