@@ -17,14 +17,7 @@ const navItems = [
     href: "#intro",
     label: "Home",
   },
-  {
-    href: "#projects",
-    label: "Projects",
-  },
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
+  
   {
     href: "#faqs",
     label: "FAQs",
@@ -36,19 +29,15 @@ const navItems = [
 ];
 
 const socialLinks = [
-  {
-    name: "Instagram",
-    link: "https://instagram.com",
-    icon: IconBrandInstagram,
-  },
+  
   {
     name: "LinkedIn",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/company/dashhub/",
     icon: IconBrandLinkedin,
   },
   {
     name: "X",
-    link: "https://x.com",
+    link: "https://x.com/dashhubtech",
     icon: IconBrandX,
   },
 ];
