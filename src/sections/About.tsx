@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const About = () => {
   return (
-    <section className="bg-white h-full  rounded-4xl shadow-2xl text-black">
+    <section className="bg-white h-full  rounded-4xl shadow-2xl text-black" id="about">
       <div className="h-full pt-[100px] px-4 md:px-0 flex flex-col-reverse md:flex-row items-center gap-4 justify-between">
         <div className="flex-1">
           <img
