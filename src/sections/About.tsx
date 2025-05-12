@@ -44,12 +44,7 @@ Established in 2020, we have dedicated ourselves to crafting a unique Venture St
           </div>
           <TextAnimation delay={0.5}>
             <p className=" px-4 font-semi-bold text-2xl md:text-5xl text-right ">
-              We are venture builders partnering with you to scale your startup
-              for future VC success. Beyond capital, we offer strategic guidance
-              and actively work alongside you to build strong foundations,
-              optimize operations, and accelerate growth. Our hands-on approach
-              and extensive network are focused on transforming your vision into
-              a thriving, investment-ready business.
+At DashHub Tech, we help businesses grow by refining their business models, identifying new market opportunities, and designing strategies for long-term success. We support product development from idea to launch, create strong and memorable branding, and provide the tools needed to scale your business effectively. Our goal is to guide you through every stage of growth with smart, sustainable solutions. 
             </p>
           </TextAnimation>
         </div>
