@@ -11,7 +11,7 @@ import { FC } from "react";
 const Hero: FC = () => {
   return (
     <section className="w-full h-screen ">
-      <div className="h-full py-[100px] space-y-4 flex flex-col">
+      <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
         <div className="container space-y-4 not-first-of-type:items-start h-full">
           <div>
             <p className="text-xl font-bold">
