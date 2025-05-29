@@ -79,6 +79,7 @@ export function ContainerTextFlip({
         layoutId={`word-div-${words[currentWordIndex]}-${id}`}
       >
         <motion.div className="inline-block">
+          {/* @ts-ignore */}
           {words[currentWordIndex].split('').map((letter, index) => (
             <motion.span
               key={index}
