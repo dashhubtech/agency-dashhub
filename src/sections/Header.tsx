@@ -6,7 +6,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Logo from "@/assets/logo.png";
 
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+ 
 const navItems = [
   {
     label: "About",

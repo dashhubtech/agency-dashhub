@@ -5,7 +5,7 @@ import { type FC, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+ 
 const faqs = [
   {
     question: "How long does it take to build a website?",

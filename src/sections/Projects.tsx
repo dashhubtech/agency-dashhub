@@ -7,7 +7,7 @@ import image5 from "@/assets/images/project-5.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+ 
 const projects = [
   {
     name: "Artisan Brew Co.",
