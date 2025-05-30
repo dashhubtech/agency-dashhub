@@ -17,6 +17,9 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+import { Services } from './collections/Services'
+import { FAQs } from './collections/FAQ'
+import { CaseStudy } from './collections/CaseStudy'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -65,9 +68,10 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
+  collections: [Pages, Posts, Media, Categories, Users, Services, FAQs, CaseStudy],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
+  serverURL: getServerSideURL(),
   plugins: [
     ...plugins,
     // storage-adapter-placeholder

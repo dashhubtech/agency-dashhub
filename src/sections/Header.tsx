@@ -1,33 +1,32 @@
-"use client";
+'use client'
 
-import { type FC, type MouseEvent, useEffect, useState } from "react";
-import { motion, useAnimate } from "motion/react";
-import Link from "next/link";
-import Button from "@/components/Button";
-import Logo from "@/assets/logo.png";
+import { type FC, type MouseEvent, useEffect, useState } from 'react'
+import { motion, useAnimate } from 'motion/react'
+import Link from 'next/link'
+import Button from '@/components/Button'
+import Logo from '@/assets/logo.png'
 
- 
 const navItems = [
   {
-    label: "About",
-    href: "#about",
+    label: 'About',
+    href: '#about',
   },
   {
-    label: "FAQs",
-    href: "#faqs",
+    label: 'FAQs',
+    href: '#faqs',
   },
   {
-    label: "Contact",
-    href: "#contact",
+    label: 'Contact',
+    href: '#contact',
   },
-];
+]
 
 const Header: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  const [topLineScope, topLineAnimate] = useAnimate();
-  const [bottomLineScope, bottomLineAnimate] = useAnimate();
-  const [navScope, navAnimate] = useAnimate();
+  const [topLineScope, topLineAnimate] = useAnimate()
+  const [bottomLineScope, bottomLineAnimate] = useAnimate()
+  const [navScope, navAnimate] = useAnimate()
 
   useEffect(() => {
     if (isOpen) {
@@ -44,7 +43,7 @@ const Header: FC = () => {
             rotate: 45,
           },
         ],
-      ]);
+      ])
       bottomLineAnimate([
         [
           bottomLineScope.current,
@@ -58,17 +57,17 @@ const Header: FC = () => {
             rotate: -45,
           },
         ],
-      ]);
+      ])
 
       navAnimate(
         navScope.current,
         {
-          height: "100%",
+          height: '100%',
         },
         {
           duration: 0.7,
-        }
-      );
+        },
+      )
     } else {
       topLineAnimate([
         [
@@ -83,7 +82,7 @@ const Header: FC = () => {
             translateY: 0,
           },
         ],
-      ]);
+      ])
       bottomLineAnimate([
         [
           bottomLineScope.current,
@@ -97,11 +96,11 @@ const Header: FC = () => {
             translateY: 0,
           },
         ],
-      ]);
+      ])
 
       navAnimate(navScope.current, {
         height: 0,
-      });
+      })
     }
   }, [
     isOpen,
@@ -111,23 +110,23 @@ const Header: FC = () => {
     bottomLineScope,
     navScope,
     navAnimate,
-  ]);
+  ])
 
   const handleClickMobileNavItem = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setIsOpen(false);
+    e.preventDefault()
+    setIsOpen(false)
 
-    const url = new URL(e.currentTarget.href);
+    const url = new URL(e.currentTarget.href)
 
-    const hash = url.hash;
+    const hash = url.hash
 
-    const target = document.querySelector(hash);
+    const target = document.querySelector(hash)
 
-    if (!target) return;
-    target.scrollIntoView({ behavior: "smooth" });
+    if (!target) return
+    target.scrollIntoView({ behavior: 'smooth' })
 
     // element.scrollIntoView({behavior: "smooth"})
-  };
+  }
   return (
     <header>
       <div
@@ -183,7 +182,7 @@ const Header: FC = () => {
             <div className="flex items-center gap-4">
               <div
                 onClick={() => setIsOpen(!isOpen)}
-                className="size-11 border border-stone-300 rounded-full inline-flex items-center justify-center bg-background"
+                className="size-11 border border-blue-700 rounded-full inline-flex items-center justify-center bg-blue-700"
               >
                 <svg
                   width="24"
@@ -200,7 +199,7 @@ const Header: FC = () => {
                     fill="currentColor"
                     ref={topLineScope}
                     style={{
-                      transformOrigin: "12px 8px",
+                      transformOrigin: '12px 8px',
                     }}
                   />
                   <motion.rect
@@ -211,7 +210,7 @@ const Header: FC = () => {
                     fill="currentColor"
                     ref={bottomLineScope}
                     style={{
-                      transformOrigin: "12px 16px",
+                      transformOrigin: '12px 16px',
                     }}
                   />
                 </svg>
@@ -220,7 +219,7 @@ const Header: FC = () => {
               <a href="#contact">
                 <Button
                   variant="primary"
-                  className="bg-blue-purple-500 h-11 px-6 rounded-xl text-white border-blue-purple-500 uppercase hidden md:inline-flex "
+                  className="bg-blue-700 h-11 px-6 rounded-xl text-white border-blue-700 uppercase hidden md:inline-flex "
                 >
                   Contact Us
                 </Button>
@@ -230,7 +229,7 @@ const Header: FC = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

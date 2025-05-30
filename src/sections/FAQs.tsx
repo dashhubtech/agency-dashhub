@@ -1,36 +1,34 @@
-"use client";
+'use client'
 
-import { type FC, useState } from "react";
+import { type FC, useState } from 'react'
 
-import { AnimatePresence, motion } from "motion/react";
-import { twMerge } from "tailwind-merge";
+import { AnimatePresence, motion } from 'motion/react'
+import { twMerge } from 'tailwind-merge'
 
- 
 const faqs = [
   {
-    question: "How long does it take to build a website?",
-    answer:
-      "It depends on the complexity of the website and the scope of the project.",
+    question: 'How long does it take to build a website?',
+    answer: 'It depends on the complexity of the website and the scope of the project.',
   },
   {
-    question: "What is your development process like?",
+    question: 'What is your development process like?',
     answer:
-      "I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs.",
+      'I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs.',
   },
   {
-    question: "Do you work with international clients?",
+    question: 'Do you work with international clients?',
     answer:
-      "Yes, I work with clients globally and can accommodate different time zones for meetings and communication.",
+      'Yes, I work with clients globally and can accommodate different time zones for meetings and communication.',
   },
   {
-    question: "What industries do you specialize in?",
+    question: 'What industries do you specialize in?',
     answer:
-      "I have experience across various industries including technology, retail, hospitality, and professional services, bringing fresh perspectives to each project.",
+      'I have experience across various industries including technology, retail, hospitality, and professional services, bringing fresh perspectives to each project.',
   },
-];
+]
 
 const FAQs: FC = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   return (
     <section className="section" id="faqs">
       <div className="container">
@@ -42,31 +40,29 @@ const FAQs: FC = () => {
               className="border-t border-stone-400 border-dotted py-6 last:border-b md:py-8 lg:py-10 relative group/faq isolate"
               onClick={() => {
                 if (faqIndex === selectedIndex) {
-                  setSelectedIndex(null);
+                  setSelectedIndex(null)
                 } else {
-                  setSelectedIndex(faqIndex);
+                  setSelectedIndex(faqIndex)
                 }
               }}
             >
               <div
                 className={twMerge(
-                  "absolute h-0 w-full bottom-0 left-0  -z-10 group-hover/faq:h-full transition-all duration-700",
-                  faqIndex === selectedIndex && "h-full"
+                  'absolute h-0 w-full bottom-0 left-0  -z-10 group-hover/faq:h-full transition-all duration-700',
+                  faqIndex === selectedIndex && 'h-full',
                 )}
               />
               <div
                 className={twMerge(
-                  "flex items-center justify-between gap-4 transition-all duration-700 lg:group-hover/faq:px-8",
-                  faqIndex === selectedIndex && "lg:px-8"
+                  'flex items-center justify-between gap-4 transition-all duration-700 lg:group-hover/faq:px-8',
+                  faqIndex === selectedIndex && 'lg:px-8',
                 )}
               >
-                <div className="text-2xl md:text-3xl lg:text-4xl">
-                  {question}
-                </div>
+                <div className="text-2xl md:text-3xl lg:text-4xl">{question}</div>
                 <div
                   className={twMerge(
-                    "inline-flex items-center justify-center size-11 border border-stone-400 rounded-full shrink-0 transition-all duration-300 bg-background",
-                    faqIndex === selectedIndex && "rotate-45"
+                    'inline-flex items-center justify-center size-11 border border-stone-400 rounded-full shrink-0 transition-all duration-300 bg-blue-700',
+                    faqIndex === selectedIndex && 'rotate-45',
                   )}
                 >
                   <svg
@@ -77,11 +73,7 @@ const FAQs: FC = () => {
                     stroke="currentColor"
                     className="size-6"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                   </svg>
                 </div>
               </div>
@@ -93,14 +85,14 @@ const FAQs: FC = () => {
                       height: 0,
                     }}
                     animate={{
-                      height: "auto",
+                      height: 'auto',
                     }}
                     exit={{
                       height: 0,
                     }}
                     transition={{
                       duration: 0.7,
-                      ease: "easeOut",
+                      ease: 'easeOut',
                     }}
                   >
                     <p className="text-xl mt-4">{answer}</p>
@@ -112,7 +104,7 @@ const FAQs: FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FAQs;
+export default FAQs
