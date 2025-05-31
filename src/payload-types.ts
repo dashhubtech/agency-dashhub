@@ -786,7 +786,7 @@ export interface CaseStudy {
     };
     [k: string]: unknown;
   };
-  relatedPosts?: (number | Post)[] | null;
+  relatedCaseStudies?: (number | CaseStudy)[] | null;
   categories?: (number | Category)[] | null;
   meta?: {
     title?: string | null;
@@ -1408,7 +1408,7 @@ export interface CaseStudySelect<T extends boolean = true> {
   title?: T;
   heroImage?: T;
   content?: T;
-  relatedPosts?: T;
+  relatedCaseStudies?: T;
   categories?: T;
   meta?:
     | T

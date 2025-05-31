@@ -32,6 +32,8 @@ export async function GET(
     return new Response('Insufficient search params', { status: 404 })
   }
 
+  console.log(path)
+
   if (!path.startsWith('/')) {
     return new Response('This endpoint can only be used for relative previews', { status: 500 })
   }

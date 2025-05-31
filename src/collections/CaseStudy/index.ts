@@ -53,7 +53,7 @@ export const CaseStudy: CollectionConfig = {
       url: ({ data, req }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'posts',
+          collection: 'caseStudy',
           req,
         })
 
@@ -63,7 +63,7 @@ export const CaseStudy: CollectionConfig = {
     preview: (data, { req }) =>
       generatePreviewPath({
         slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'posts',
+        collection: 'caseStudy',
         req,
       }),
     useAsTitle: 'title',
@@ -108,7 +108,7 @@ export const CaseStudy: CollectionConfig = {
         {
           fields: [
             {
-              name: 'relatedPosts',
+              name: 'relatedCaseStudies',
               type: 'relationship',
               admin: {
                 position: 'sidebar',
@@ -121,7 +121,7 @@ export const CaseStudy: CollectionConfig = {
                 }
               },
               hasMany: true,
-              relationTo: 'posts',
+              relationTo: 'caseStudy',
             },
             {
               name: 'categories',
