@@ -152,7 +152,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#274dfa] text-foreground;
+    @apply bg-background text-foreground;
   }
 }
 

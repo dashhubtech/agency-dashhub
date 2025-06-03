@@ -74,7 +74,6 @@ export default buildConfig({
   serverURL: getServerSideURL(),
   plugins: [
     ...plugins,
-    // storage-adapter-placeholder
     uploadthingStorage({
       collections: {
         media: true,
