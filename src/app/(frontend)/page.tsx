@@ -12,7 +12,6 @@ import Services from '@/sections/Services'
 export default async function Home() {
   return (
     <main className="bg-[#274dfa] text-white">
-      <Header />
       <Hero />
       <Intro />
       <About />

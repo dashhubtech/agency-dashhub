@@ -148,7 +148,7 @@ const Header: FC = () => {
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <Link
-              className="text-stone-200 border-t last:border-b py-8 group/nav-item   border-stone-800 relative isolate "
+              className="!text-stone-200 border-t last:border-b py-8 group/nav-item   border-stone-800 relative isolate "
               href={href}
               key={label}
               onClick={handleClickMobileNavItem}
@@ -194,7 +194,7 @@ const Header: FC = () => {
             <div className="flex items-center gap-4">
               <div
                 onClick={() => setIsOpen(!isOpen)}
-                className="size-11 border border-blue-700 rounded-full inline-flex items-center justify-center bg-blue-700"
+                className="size-11 border  rounded-full inline-flex items-center justify-center bg-blue-700 text-white"
               >
                 <svg
                   width="24"
