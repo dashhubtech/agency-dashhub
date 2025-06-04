@@ -8,16 +8,28 @@ import Logo from '@/assets/logo.png'
 
 const navItems = [
   {
-    label: 'About',
+    href: '#home',
+    label: 'Home',
+  },
+  {
     href: '#about',
+    label: 'About',
   },
   {
-    label: 'FAQs',
     href: '#faqs',
+    label: 'FAQs',
   },
   {
-    label: 'Contact',
+    href: '#services',
+    label: 'Services',
+  },
+  {
+    href: '#blogs',
+    label: 'Blogs',
+  },
+  {
     href: '#contact',
+    label: 'Contact',
   },
 ]
 
