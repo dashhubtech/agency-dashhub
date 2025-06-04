@@ -38,8 +38,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata = createMetadata({
-  title: 'DashHub Tech',
-  description: 'DashHub Tech is a leading provider of blockchain infrastructure and services.',
+  title: 'Engage your SMEs',
+  description: 'DashHub Tech is a startup that helps startups and SMEs to grow.',
   icons: {
     icon: '/favicon.ico',
   },
