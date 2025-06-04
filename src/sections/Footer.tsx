@@ -22,6 +22,14 @@ const navItems = [
     label: 'FAQs',
   },
   {
+    href: '#services',
+    label: 'Services',
+  },
+  {
+    href: '#blogs',
+    label: 'Blogs',
+  },
+  {
     href: '#contact',
     label: 'Contact',
   },
@@ -67,10 +75,6 @@ const Footer: FC = () => {
     <footer className="bg-stone-900 text-white" id="contact">
       <div className="container">
         <div className="section">
-          <div className="flex items-center gap-3">
-            <div className="animate-pulse size-3 rounded-full bg-green-400" />
-            <span className="uppercase">One spot available for next month</span>
-          </div>
           <div className="grid md:grid-cols-3 md:items-center">
             <div className="md:col-span-2 space-y-4">
               <TextAnimation>

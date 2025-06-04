@@ -7,6 +7,9 @@ const Services = () => {
     <section className="section" id="services">
       <div className="container">
         <h2 className="text-5xl md:text-7xl font-semibold lg:text-8xl">Services</h2>
+        <p className="text-xl md:text-2xl lg:text-3xl text-center">
+          We offer the following services to our clients.
+        </p>
         <div className="mt-10 md:mt-16 lg:mt-20">
           <HoverDevCard />
         </div>
