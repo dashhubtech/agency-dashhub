@@ -8,6 +8,7 @@ import { draftMode } from 'next/headers'
 
 import { getServerSideURL } from '@/utilities/getURL'
 import './globals.css'
+import { createMetadata } from '@/lib/seo'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -36,11 +37,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(getServerSideURL()),
-  openGraph: mergeOpenGraph(),
-  twitter: {
-    card: 'summary_large_image',
-    creator: '@payloadcms',
+export const metadata = createMetadata({
+  title: 'DashHub Tech',
+  description: 'DashHub Tech is a leading provider of blockchain infrastructure and services.',
+  icons: {
+    icon: '/favicon.ico',
   },
-}
+  metadataBase: new URL(getServerSideURL()),
+})
