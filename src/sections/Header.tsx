@@ -5,6 +5,7 @@ import { motion, useAnimate } from 'motion/react'
 import Link from 'next/link'
 import Button from '@/components/Button'
 import Logo from '@/assets/logo.png'
+import localFont from 'next/font/local'
 
 const navItems = [
   {
@@ -32,6 +33,15 @@ const navItems = [
     label: 'Contact',
   },
 ]
+
+const canopeeFont = localFont({
+  src: [
+    {
+      path: '../fonts/canopee.otf',
+    },
+  ],
+  variable: '--font-canopee',
+})
 
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -142,7 +152,7 @@ const Header: FC = () => {
   return (
     <header>
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10 font-canopee"
+        className={`fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10 ${canopeeFont.className}`}
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col">

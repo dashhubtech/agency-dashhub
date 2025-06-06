@@ -10,30 +10,31 @@ import { getServerSideURL } from '@/utilities/getURL'
 import './globals.css'
 import { createMetadata } from '@/lib/seo'
 import Header from '@/sections/Header'
+import localFont from 'next/font/local'
+import { InitTheme } from '@/providers/Theme/InitTheme'
+
+const neueMontrealFont = localFont({
+  src: [
+    {
+      path: '../../fonts/neue.otf',
+    },
+  ],
+  variable: '--font-neue-montreal',
+})
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { isEnabled } = await draftMode()
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* <InitTheme /> */}
+        <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
-      <body className={`antialiased  `}>
+      <body className={`antialiased ${neueMontrealFont.className}`}>
         <Providers>
-          {/* <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
-
-          <Header /> */}
           <Header />
 
           {children}
-          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
