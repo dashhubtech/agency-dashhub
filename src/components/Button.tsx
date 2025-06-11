@@ -13,7 +13,7 @@ const Button = (
   return (
     <button
       className={twMerge(
-        ' h-14  px-6 rounded-xl  border   group/button border-blue-700 uppercase inline-flex items-center  relative transition duration-500 gap-2',
+        'h-12 md:h-14  px-6 rounded-xl  border   group/button border-blue-700 uppercase inline-flex items-center  relative transition duration-500 gap-2',
         variant === 'primary' && 'bg-white text-blue-700 ',
         variant === 'secondary' && 'hover:bg-white hover:text-blue-700 ',
         variant === 'text' &&

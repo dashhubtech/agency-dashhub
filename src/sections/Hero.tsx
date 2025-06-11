@@ -4,6 +4,7 @@ import Button from '@/components/Button'
 import { ContainerTextFlip } from '@/components/container-text-flip'
 import { InfiniteSlider } from '@/components/infinite-slider'
 import { heroImages } from '@/lib/constants'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
@@ -11,10 +12,10 @@ const Hero: FC = () => {
   return (
     <section className="w-full h-screen ">
       <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
-        <div className="container space-y-2 not-first-of-type:items-start h-full">
-          <div>
-            <p className="text-2xl font-bold">Are you ready to scale your business?</p>
-            <h1 className="text-6xl lg:text-8xl flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div className=" space-y-2  h-full flex flex-col items-center justify-center ">
+          <div className="text-center flex flex-col items-center justify-center">
+            <p className="text-lg md:text-2xl font-bold">Are you ready to scale your business?</p>
+            <h1 className="!text-8xl flex flex-col md:flex-row items-center gap-4">
               Dashhub builds{' '}
               <ContainerTextFlip
                 words={['startups', 'ventures', 'innovations']}
@@ -25,13 +26,16 @@ const Hero: FC = () => {
           </div>
 
           <Link href="https://calendly.com/dashhubtech/audit-call">
-            <Button className="w-[200px] flex items-center justify-center" variant="primary">
+            <Button
+              className="w-[200px] flex items-center justify-center cursor-pointer"
+              variant="primary"
+            >
               Let&apos;s get started
             </Button>
           </Link>
         </div>
         <div>
-          <InfiniteSlider speedOnHover={1} gap={24}>
+          <InfiniteSlider speedOnHover={1} gap={24} className="relative">
             {heroImages.map((image, index) => (
               <img
                 key={index}
