@@ -11,9 +11,9 @@ const Hero: FC = () => {
   return (
     <section className="w-full h-screen ">
       <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
-        <div className="container space-y-4 not-first-of-type:items-start h-full">
+        <div className="container space-y-2 not-first-of-type:items-start h-full">
           <div>
-            <p className="text-xl font-bold">Are you ready to scale your business?</p>
+            <p className="text-2xl font-bold">Are you ready to scale your business?</p>
             <h1 className="text-6xl lg:text-8xl flex flex-col md:flex-row items-start md:items-center gap-4">
               Dashhub builds{' '}
               <ContainerTextFlip
@@ -25,7 +25,7 @@ const Hero: FC = () => {
           </div>
 
           <Link href="https://calendly.com/dashhubtech/audit-call">
-            <Button className="w-[200px] flex items-center justify-center" variant="secondary">
+            <Button className="w-[200px] flex items-center justify-center" variant="primary">
               Let&apos;s get started
             </Button>
           </Link>
