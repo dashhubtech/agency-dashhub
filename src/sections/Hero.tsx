@@ -4,7 +4,6 @@ import Button from '@/components/Button'
 import { ContainerTextFlip } from '@/components/container-text-flip'
 import { InfiniteSlider } from '@/components/infinite-slider'
 import { heroImages } from '@/lib/constants'
-import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
@@ -15,7 +14,7 @@ const Hero: FC = () => {
         <div className=" space-y-2  h-full flex flex-col items-center justify-center ">
           <div className="text-center flex flex-col items-center justify-center">
             <p className="text-lg md:text-2xl font-bold">Are you ready to scale your business?</p>
-            <h1 className="!text-8xl flex flex-col md:flex-row items-center gap-4">
+            <h1 className="!text-7xl md:!text-8xl flex flex-col md:flex-row items-center gap-4">
               Dashhub builds{' '}
               <ContainerTextFlip
                 words={['startups', 'ventures', 'innovations']}
