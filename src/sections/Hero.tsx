@@ -13,7 +13,6 @@ const Hero: FC = () => {
       <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
         <div className=" space-y-2  h-full flex flex-col items-center justify-center ">
           <div className="text-center flex flex-col items-center justify-center">
-            <p className="text-lg md:text-2xl font-bold">Are you ready to scale your business?</p>
             <h1 className="!text-7xl md:!text-8xl flex flex-col md:flex-row items-center gap-4">
               Dashhub builds{' '}
               <ContainerTextFlip
@@ -22,6 +21,11 @@ const Hero: FC = () => {
                 interval={5000}
               />
             </h1>
+            <p className="text-lg md:text-2xl font-bold">
+              We partner with early-stage startups to build robust technology infrastructures,
+              streamline product development, and accelerate market launch — so you can scale fast
+              and smart without the growing pains.
+            </p>
           </div>
 
           <Link href="https://calendly.com/dashhubtech/audit-call">
