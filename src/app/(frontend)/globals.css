@@ -200,10 +200,6 @@ h1 {
   }
 }
 
-p {
-  @apply text-xl text-muted-foreground;
-}
-
 a {
   color: currentColor;
 
