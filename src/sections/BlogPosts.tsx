@@ -4,7 +4,7 @@ import configPromise from '@payload-config'
 import { Card, Carousel } from '@/components/ui/apple-cards-carousel'
 import { Category } from '@/payload-types'
 
-const HomeBlogPosts = async () => {
+const BlogPosts = async () => {
   const payload = await getPayload({ config: configPromise })
 
   const posts = await payload.find({
@@ -46,4 +46,4 @@ const HomeBlogPosts = async () => {
   )
 }
 
-export default HomeBlogPosts
+export default BlogPosts

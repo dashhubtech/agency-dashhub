@@ -187,7 +187,6 @@ h1 {
   font-weight: bold;
 
   @media (max-width: 1024px) {
-    margin: 24px 0;
     font-size: 42px;
   }
 
@@ -197,14 +196,6 @@ h1 {
 
   @media (max-width: 400px) {
     font-size: 32px;
-  }
-}
-
-p {
-  margin: 24px 0;
-
-  @media (max-width: 1024px) {
-    margin: calc(var(--base) * 0.75) 0;
   }
 }
 

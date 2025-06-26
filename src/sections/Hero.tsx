@@ -9,7 +9,10 @@ import { FC } from 'react'
 
 const Hero: FC = () => {
   return (
-    <section className="w-full h-screen ">
+    <section
+      className="w-full
+     "
+    >
       <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
         <div className=" space-y-2  h-full flex flex-col items-center justify-center ">
           <div className="text-center flex flex-col items-center justify-center">
@@ -21,10 +24,10 @@ const Hero: FC = () => {
                 interval={5000}
               />
             </h1>
-            <p className="text-lg md:text-2xl font-bold">
+            <p className="text-md md:text-lg  max-w-3xl">
               We partner with early-stage startups to build robust technology infrastructures,
-              streamline product development, and accelerate market launch — so you can scale fast
-              and smart without the growing pains.
+              streamline product development, and accelerate market launch <br />— so you can scale
+              fast and smart without the growing pains.
             </p>
           </div>
 

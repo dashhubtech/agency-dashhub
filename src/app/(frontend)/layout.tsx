@@ -12,6 +12,7 @@ import { createMetadata } from '@/lib/seo'
 import Header from '@/sections/Header'
 import localFont from 'next/font/local'
 import { InitTheme } from '@/providers/Theme/InitTheme'
+import Footer from '@/sections/Footer'
 
 const neueMontrealFont = localFont({
   src: [
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Header />
 
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

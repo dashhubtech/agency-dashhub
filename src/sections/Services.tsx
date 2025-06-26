@@ -5,11 +5,7 @@ import React from 'react'
 const Services = () => {
   return (
     <section className="section" id="services">
-      <div className="container">
-        <h2 className="text-5xl md:text-7xl font-semibold lg:text-8xl">Services</h2>
-        <p className="text-xl md:text-2xl lg:text-3xl">
-          We offer the following services to our clients.
-        </p>
+      <div>
         <div className="mt-10 md:mt-16 lg:mt-20">
           <HoverDevCard />
         </div>
@@ -23,7 +19,7 @@ export default Services
 const HoverDevCard = () => {
   return (
     <div className="p-4">
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2  ">
         {servicesData.map(({ title, description, icon }, index) => (
           <HoverCard key={index} title={title} subtitle={description} Icon={icon} />
         ))}

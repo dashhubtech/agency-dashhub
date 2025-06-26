@@ -12,7 +12,7 @@ const CTA: FC = () => {
         <div className="text-center flex flex-col items-center justify-center gap-5">
           <TextAnimation delay={0.6}>
             <h2 className="text-5xl md:text-7xl lg:text-8xl uppercase font-bold ">
-              Connect with the World
+              Start Building Your Presence
             </h2>
           </TextAnimation>
           <TextAnimation delay={0.7}>
