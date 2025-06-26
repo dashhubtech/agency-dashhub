@@ -15,7 +15,7 @@ const ServicesPage = () => {
               <h1 className="!m-0 !text-7xl !lg:text-9xl capitalize max-w-2xl">
                 Need help with your business
               </h1>
-              <p>We got your covered</p>
+              <p>We got you covered</p>
             </div>
 
             <Button variant="secondary">Get Started</Button>
