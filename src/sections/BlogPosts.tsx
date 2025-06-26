@@ -36,7 +36,8 @@ const BlogPosts = async () => {
         <h2 className="text-5xl md:text-7xl font-semibold lg:text-8xl">Some of Our Blog Posts</h2>
 
         <p className="text-xl md:text-2xl font-medium text-accent pt-2">
-          We&apos;ve curated some of our best posts to give you a taste of what we have to offer.
+          We&apos;ve curated some of our best blog posts to give you a taste of what we have to
+          offer.
         </p>
         <div className="mt-10 ">
           <Carousel items={cards} />
