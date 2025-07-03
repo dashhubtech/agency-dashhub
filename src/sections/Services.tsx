@@ -5,10 +5,8 @@ import React from 'react'
 const Services = () => {
   return (
     <section className="section" id="services">
-      <div>
-        <div className="mt-10 md:mt-16 lg:mt-20">
-          <HoverDevCard />
-        </div>
+      <div className="mt-10 md:mt-16 lg:mt-20">
+        <HoverDevCard />
       </div>
     </section>
   )

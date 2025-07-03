@@ -6,7 +6,7 @@ import Intro from '@/sections/Intro'
 import BlogPosts from '@/sections/BlogPosts'
 
 import About from '@/sections/About'
-import Services from '@/sections/Services'
+import ServicesCarousel from '@/components/ServicesCarousel'
 
 export default async function Home() {
   return (
@@ -14,7 +14,7 @@ export default async function Home() {
       <Hero />
       <Intro />
       <About />
-      <Services />
+      <ServicesCarousel />
       <BlogPosts />
       <FAQs />
       <CTA />
