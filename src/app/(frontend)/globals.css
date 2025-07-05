@@ -184,116 +184,117 @@ img {
   @apply w-[120px];
 }
 
-h1 {
-  margin: 10px 0;
-  font-size: 64px;
-  font-weight: bold;
-  line-height: normal;
-
-  @media (max-width: 1024px) {
-    font-size: 42px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 74px;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 32px;
-  }
-}
-p {
-  @apply text-2xl;
-}
-
-a {
-  color: currentColor;
-
-  &:focus {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  &:active {
-    opacity: 0.7;
-    outline: none;
-  }
-}
-
-svg {
-  vertical-align: middle;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 45px;
-  max-width: 1024px;
-  margin: 0 auto;
-  overflow: hidden;
-
-  @media (max-width: 400px) {
-    padding: 24px;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-
-    h1 {
-      text-align: center;
-    }
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    a {
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    .admin {
-      color: rgb(0, 0, 0);
-      background: rgb(1000, 1000, 1000);
-      border: 1px solid rgb(0, 0, 0);
-    }
-
-    .docs {
-      color: rgb(1000, 1000, 1000);
-      background: rgb(0, 0, 0);
-      border: 1px solid rgb(1000, 1000, 1000);
-    }
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+article {
+  h1 {
+    margin: 10px 0;
+    font-weight: bold;
+    line-height: normal;
 
     @media (max-width: 1024px) {
+      font-size: 74px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 32px;
+    }
+  }
+  p {
+    @apply text-xl;
+  }
+
+  a {
+    color: currentColor;
+
+    &:focus {
+      opacity: 0.8;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.7;
+      outline: none;
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 45px;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    @media (max-width: 400px) {
+      padding: 24px;
+    }
+
+    .content {
+      display: flex;
       flex-direction: column;
-      gap: 6px;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+
+      h1 {
+        text-align: center;
+      }
     }
 
-    p {
-      margin: 0;
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      a {
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+      }
+
+      .admin {
+        color: rgb(0, 0, 0);
+        background: rgb(1000, 1000, 1000);
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+      .docs {
+        color: rgb(1000, 1000, 1000);
+        background: rgb(0, 0, 0);
+        border: 1px solid rgb(1000, 1000, 1000);
+      }
     }
 
-    .codeLink {
-      text-decoration: none;
-      padding: 0 0.5rem;
-      background: rgb(60, 60, 60);
-      border-radius: 4px;
+    .footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .codeLink {
+        text-decoration: none;
+        padding: 0 0.5rem;
+        background: rgb(60, 60, 60);
+        border-radius: 4px;
+      }
     }
   }
 }
@@ -312,7 +313,8 @@ svg {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+  margin-right: calc((1.5rem - 0.6rem) / 2 * -1);
+  gap: 4px;
 }
 .embla__dot {
   -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
@@ -326,8 +328,8 @@ svg {
   border: 0;
   padding: 0;
   margin: 0;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

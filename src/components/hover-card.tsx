@@ -17,7 +17,7 @@ const HoverCard = ({ title, subtitle, Icon }: CardType) => {
       <h3 className="font-medium text-2xl text-slate-950 group-hover:text-white relative duration-300">
         {title}
       </h3>
-      <p className="text-slate-400 group-hover:text-violet-200 relative duration-300 !text-xl">
+      <p className="text-slate-400 group-hover:text-violet-200 relative duration-300 text-xl">
         {subtitle}
       </p>
     </div>

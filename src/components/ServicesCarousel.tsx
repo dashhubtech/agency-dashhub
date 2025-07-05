@@ -33,11 +33,11 @@ const ServicesCarousel = () => {
         <CarouselContent>
           {servicesData.map(({ title, description, icon: Icon }, index) => (
             <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-              <div className="flex flex-col items-center p-6 justify-center gap-4 shadow-md bg-white !text-blue-purple-500 rounded-xl ">
+              <div className="flex flex-col items-center p-6 justify-center gap-4 shadow-md bg-white text-blue-purple-500 rounded-xl ">
                 <Icon className="w-14 h-14" />
                 <div className="mt-4 text-center space-y-4">
-                  <h3 className="text-4xl capitalize  font-semibold">{title}</h3>
-                  <p className=" text-sm">{description}</p>
+                  <h3 className="text-3xl capitalize  font-semibold">{title}</h3>
+                  <p className=" text-base">{description}</p>
                 </div>
               </div>
             </CarouselItem>

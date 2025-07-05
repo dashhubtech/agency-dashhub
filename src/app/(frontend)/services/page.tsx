@@ -12,7 +12,7 @@ const ServicesPage = () => {
           <div className="flex flex-col items-start gap-4">
             <div className="flex flex-col items-start gap-4">
               <p className="text-xl text-muted-foreground uppercase">Our Services</p>
-              <h1 className="!m-0 !text-7xl !lg:text-9xl capitalize max-w-2xl">
+              <h1 className="!m-0 text-7xl !lg:text-9xl capitalize max-w-2xl">
                 Need help with your business
               </h1>
               <p>We got you covered</p>

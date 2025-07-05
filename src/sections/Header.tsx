@@ -158,7 +158,7 @@ const Header: FC = () => {
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <Link
-              className="!text-stone-200 border-t last:border-b py-8 group/nav-item   border-stone-800 relative isolate "
+              className="text-stone-200 border-t last:border-b py-8 group/nav-item   border-stone-800 relative isolate "
               href={href}
               key={label}
               onClick={handleClickMobileNavItem}

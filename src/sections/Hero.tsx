@@ -13,10 +13,10 @@ const Hero: FC = () => {
       className="w-full
      "
     >
-      <div className="h-full py-[100px] space-y-4 flex flex-col" id="home">
-        <div className=" space-y-2  h-full flex flex-col items-center justify-center ">
-          <div className="text-center flex flex-col items-center justify-center">
-            <h1 className="!text-7xl md:!text-8xl flex flex-col md:flex-row items-center gap-4">
+      <div className="h-full pt-[100px] space-y-4 flex flex-col" id="home">
+        <div className=" space-y-4  h-full flex flex-col items-center justify-center ">
+          <div className="space-y-4 text-center flex flex-col items-center justify-center">
+            <h1 className="text-7xl md:text-8xl flex flex-col md:flex-row items-center gap-4 font-semibold">
               Dashhub builds{' '}
               <ContainerTextFlip
                 words={['startups', 'ventures', 'innovations']}
@@ -24,7 +24,7 @@ const Hero: FC = () => {
                 interval={5000}
               />
             </h1>
-            <p className="text-md md:text-lg  max-w-3xl">
+            <p className="text-md md:text-lg  max-w-3xl px-4 md:px-0">
               We partner with early-stage startups to build robust technology infrastructures,
               streamline product development, and accelerate market launch <br />— so you can scale
               fast and smart without the growing pains.

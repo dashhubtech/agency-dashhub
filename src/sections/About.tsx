@@ -47,7 +47,7 @@ const About = () => {
             <h2 className="text-3xl uppercase ">What We Do</h2>
           </div>
           <TextAnimation delay={0.5}>
-            <p className=" px-4 font-semi-bold !text-2xl md:!text-5xl text-right ">
+            <p className=" px-4 font-semi-bold text-2xl md:text-5xl text-right ">
               At DashHub Tech, we help businesses grow by refining their business models,
               identifying new market opportunities, and designing strategies for long-term success.
               We support product development from idea to launch, create strong and memorable
