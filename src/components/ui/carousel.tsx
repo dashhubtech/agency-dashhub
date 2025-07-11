@@ -12,6 +12,8 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
 
+type DirectionOption = 'ltr' | 'rtl' | undefined
+
 type CarouselProps = {
   opts?: CarouselOptions
   plugins?: CarouselPlugin
@@ -21,11 +23,15 @@ type CarouselProps = {
 
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
+  thumbsRef: ReturnType<typeof useEmblaCarousel>[0]
   api: ReturnType<typeof useEmblaCarousel>[1]
   scrollPrev: () => void
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  activeIndex: number
+  onThumbClick: (index: number) => void
+  direction: DirectionOption
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -47,6 +53,7 @@ function Carousel({
   plugins,
   className,
   children,
+  dir,
   ...props
 }: React.ComponentProps<'div'> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
@@ -56,13 +63,28 @@ function Carousel({
     },
     plugins,
   )
+
+  const direction = dir as DirectionOption
+
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel(
+    {
+      ...props,
+      axis: orientation === 'vertical' ? 'y' : 'x',
+      direction: dir as DirectionOption,
+      containScroll: 'keepSnaps',
+      dragFree: true,
+    },
+    plugins,
+  )
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(false)
+  const [activeIndex, setActiveIndex] = React.useState<number>(0)
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) return
     setCanScrollPrev(api.canScrollPrev())
     setCanScrollNext(api.canScrollNext())
+    setActiveIndex(api.selectedScrollSnap)
   }, [])
 
   const scrollPrev = React.useCallback(() => {
@@ -102,6 +124,14 @@ function Carousel({
     }
   }, [api, onSelect])
 
+  const onThumbClick = React.useCallback(
+    (index: number) => {
+      if (!api || !emblaThumbsApi) return
+      api.scrollTo(index)
+    },
+    [api, emblaThumbsApi],
+  )
+
   return (
     <CarouselContext.Provider
       value={{
@@ -113,6 +143,10 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        activeIndex,
+        onThumbClick,
+        direction,
+        thumbsRef: emblaThumbsRef,
       }}
     >
       <div
@@ -142,6 +176,26 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+export const CarouselThumbsContainer = React.forwardRef<
+  HTMLDivElement,
+  {} & React.HTMLAttributes<HTMLDivElement>
+>(({ className, dir, children, ...props }, ref) => {
+  const { thumbsRef, orientation, direction } = useCarousel()
+
+  return (
+    <div {...props} ref={thumbsRef} className="overflow-hidden" dir={direction}>
+      <div
+        ref={ref}
+        className={cn('flex', `${orientation === 'vertical' ? 'flex-col' : ''}`, className)}
+      >
+        {children}
+      </div>
+    </div>
+  )
+})
+
+CarouselThumbsContainer.displayName = 'CarouselThumbsContainer'
+
 function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel()
 
@@ -160,6 +214,38 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+export const SliderThumbItem = React.forwardRef<
+  HTMLDivElement,
+  {
+    index: number
+  } & React.HTMLAttributes<HTMLDivElement>
+>(({ className, index, children, ...props }, ref) => {
+  const { activeIndex, onThumbClick, orientation } = useCarousel()
+  const isSlideActive = activeIndex === index
+  return (
+    <div
+      {...props}
+      ref={ref}
+      onClick={() => onThumbClick(index)}
+      className={cn(
+        'flex min-w-0 shrink-0 grow-0 basis-1/3 bg-background p-1',
+        `${orientation === 'vertical' ? 'pb-1' : 'pr-1'}`,
+        className,
+      )}
+    >
+      <div
+        className={`relative aspect-square h-20 w-full opacity-50 rounded-md transition-opacity ${
+          isSlideActive ? '!opacity-100' : ''
+        }`}
+      >
+        {children}
+      </div>
+    </div>
+  )
+})
+
+SliderThumbItem.displayName = 'SliderThumbItem'
+
 function CarouselPrevious({
   className,
   variant = 'outline',
@@ -175,7 +261,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        'absolute size-8 rounded-full',
+        'absolute size-7 rounded-full text-blue-purple-500 hover:text-blue-600',
         orientation === 'horizontal'
           ? 'top-1/2 -left-12 -translate-y-1/2'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -206,7 +292,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        'absolute size-8 rounded-full',
+        'absolute size-7 rounded-full text-blue-purple-500 hover:text-blue-600',
         orientation === 'horizontal'
           ? 'top-1/2 -right-12 -translate-y-1/2'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -221,5 +307,31 @@ function CarouselNext({
     </Button>
   )
 }
+
+export const CarouselIndicator = React.forwardRef<
+  HTMLButtonElement,
+  { index: number } & React.ComponentProps<typeof Button>
+>(({ className, index, children, ...props }, ref) => {
+  const { activeIndex, onThumbClick } = useCarousel()
+  const isSlideActive = activeIndex === index
+  return (
+    <Button
+      ref={ref}
+      size="icon"
+      className={cn(
+        'h-1 w-6 rounded-full',
+        "data-[active='false']:bg-white data-[active='true']:bg-blue-700",
+        className,
+      )}
+      data-active={isSlideActive}
+      onClick={() => onThumbClick(index)}
+      {...props}
+    >
+      <span className="sr-only">slide {index + 1} </span>
+    </Button>
+  )
+})
+
+CarouselIndicator.displayName = 'CarouselIndicator'
 
 export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext }

@@ -25,9 +25,8 @@ const Hero: FC = () => {
               />
             </h1>
             <p className="text-md md:text-lg  max-w-3xl px-4 md:px-0">
-              We partner with early-stage startups to build robust technology infrastructures,
-              streamline product development, and accelerate market launch <br />— so you can scale
-              fast and smart without the growing pains.
+              We partner with early-stage startups to build robust technology infrastructures, and
+              accelerate market launch so you can scale fast and smart without the growing pains.
             </p>
           </div>
 
@@ -47,7 +46,7 @@ const Hero: FC = () => {
                 key={index}
                 src={image.img}
                 alt="hero-image"
-                className="img  opacity-80 hover:opacity-100 transition-all duration-300 ease-in-out rounded-xl hover:scale-95 hover:shadow-2xl"
+                className="img opacity-80 hover:opacity-100 transition-all duration-300 ease-in-out rounded-xl hover:scale-95 hover:shadow-2xl"
               />
             ))}
           </InfiniteSlider>

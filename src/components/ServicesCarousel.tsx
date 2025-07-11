@@ -1,13 +1,20 @@
 'use client'
-import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselIndicator,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselThumbsContainer,
+} from '@/components/ui/carousel'
 import { servicesData } from '@/lib/data'
 import Autoplay from 'embla-carousel-autoplay'
 import { useState } from 'react'
-import { DotButton, useDotButton } from './carousel-dot'
 
 const ServicesCarousel = () => {
   const [api, setApi] = useState<CarouselApi>()
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api)
 
   return (
     <section className="max-w-[90rem] px-4 mx-auto section">
@@ -29,33 +36,36 @@ const ServicesCarousel = () => {
           }),
         ]}
         setApi={setApi}
+        className="space-y-6"
       >
         <CarouselContent>
-          {servicesData.map(({ title, description, icon: Icon }, index) => (
-            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-              <div className="flex flex-col items-center p-6 justify-center gap-4 shadow-md bg-white text-blue-purple-500 rounded-xl ">
-                <Icon className="w-14 h-14" />
-                <div className="mt-4 text-center space-y-4">
-                  <h3 className="text-3xl capitalize  font-semibold">{title}</h3>
-                  <p className=" text-base">{description}</p>
+          {servicesData.map(({ title, description, icon: Icon, image }, index) => (
+            <CarouselItem key={index} className="pl-4 md:basis-1/2 ">
+              <div className="shadow-md text-white ">
+                <div className="flex flex-col items-center  relative gap-4 mx-auto">
+                  <img src={image} alt={title} className="object-contain rounded-2xl  " />
+
+                  <div className="absolute w-full h-full bg-black/60 rounded-2xl " />
+                  <div className="absolute mt-4 text-center space-y-2 bottom-5 left-0 px-4">
+                    <div className="flex items-center justify-center flex-row gap-4">
+                      <Icon className="w-14 h-14" />
+                      <h3 className="text-2xl md:text-3xl capitalize  font-semibold">{title}</h3>
+                    </div>
+                    <p className=" text-base">{description}</p>
+                  </div>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="embla__controls">
-          <div className="embla__dots">
-            {scrollSnaps.map((_, index) => (
-              <DotButton
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={'embla__dot'.concat(
-                  index === selectedIndex ? ' embla__dot--selected' : '',
-                )}
-              />
-            ))}
-          </div>
-        </div>
+        <CarouselPrevious className="hidden md:block" />
+        <CarouselNext className="hidden md:block" />
+
+        <CarouselThumbsContainer className="gap-x-1 justify-self-center ">
+          {servicesData.map((_, index) => (
+            <CarouselIndicator key={index} index={index} />
+          ))}
+        </CarouselThumbsContainer>
       </Carousel>
     </section>
   )

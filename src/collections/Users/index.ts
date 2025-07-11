@@ -21,6 +21,17 @@ export const Users: CollectionConfig = {
       name: 'name',
       type: 'text',
     },
+    {
+      name: 'email',
+      type: 'text',
+      unique: true,
+    },
+    {
+      name: 'image',
+      type: 'upload',
+
+      relationTo: 'media',
+    },
   ],
   timestamps: true,
 }
