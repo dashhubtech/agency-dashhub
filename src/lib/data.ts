@@ -75,7 +75,7 @@ export const servicesData = [
     image: Sales.src,
   },
   {
-    title: 'Investor Pitch & Funding Readiness',
+    title: 'Investor Pitch & Funding',
     description:
       'Perfect for startups and scaling companies—we create compelling pitch decks, financial models, and investor strategy that improve funding outcomes.',
     icon: FaHandHoldingUsd,

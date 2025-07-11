@@ -17,10 +17,10 @@ const ServicesCarousel = () => {
   const [api, setApi] = useState<CarouselApi>()
 
   return (
-    <section className="max-w-[90rem] px-4 mx-auto section">
-      <div className="pb-[50px]">
+    <section className="max-w-[90rem] px-4 mx-auto section" id="services">
+      <div className="pb-[30px]">
         <h2 className="text-5xl md:text-7xl font-semibold lg:text-8xl">Services</h2>
-        <p className="text-xl md:text-2xl lg:text-3xl">
+        <p className="text-base md:text-lg lg:text-xl">
           We offer the following services to our clients.
         </p>
       </div>
@@ -48,10 +48,10 @@ const ServicesCarousel = () => {
                   <div className="absolute w-full h-full bg-black/60 rounded-2xl " />
                   <div className="absolute mt-4 text-center space-y-2 bottom-5 left-0 px-4">
                     <div className="flex items-center justify-center flex-row gap-4">
-                      <Icon className="w-14 h-14" />
-                      <h3 className="text-2xl md:text-3xl capitalize  font-semibold">{title}</h3>
+                      <Icon className="size-8 md:size-14" />
+                      <h3 className="text-lg font-bold md:text-3xl capitalize  ">{title}</h3>
                     </div>
-                    <p className=" text-base">{description}</p>
+                    <p className=" md:text-base text-sm">{description}</p>
                   </div>
                 </div>
               </div>

@@ -152,7 +152,7 @@ const Header: FC = () => {
   return (
     <header>
       <div
-        className={`fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10 ${canopeeFont.className}`}
+        className={`fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-20 ${canopeeFont.className}`}
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col">
@@ -164,7 +164,7 @@ const Header: FC = () => {
               onClick={handleClickMobileNavItem}
             >
               <div className="container max-w-full! flex items-center justify-between">
-                <span className="text-4xl md:text-6xl group-hover/nav-item:pl-4 transition-all duration-500">
+                <span className="text-3xl md:text-5xl group-hover/nav-item:pl-4 transition-all duration-500">
                   {label}
                 </span>
                 <svg
@@ -187,7 +187,7 @@ const Header: FC = () => {
           ))}
         </nav>
       </div>
-      <div className=" fixed top-0 left-0 w-full backdrop-blur-md z-10">
+      <div className=" fixed top-0 left-0 w-full backdrop-blur-md z-20">
         <div className="container max-w-full!">
           <div className="flex justify-between h-20 items-center">
             <div>
@@ -198,7 +198,7 @@ const Header: FC = () => {
           </div>
         </div>
       </div>
-      <div className="fixed top-0 left-0 w-full z-10">
+      <div className="fixed top-0 left-0 w-full z-20">
         <div className="container max-w-full!">
           <div className="flex justify-end h-20 items-center">
             <div className="flex items-center gap-4">
